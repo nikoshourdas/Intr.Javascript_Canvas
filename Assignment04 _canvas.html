@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <script>
+
+            function draw(){
+                var canvas = document.getElementById('myCanvas');
+                if(canvas.getContext){
+                    drawCircle(canvas,350,180);
+                    drawCircle(canvas,500,300);
+                    drawCircle(canvas,350,480);
+                    drawCircle(canvas,200,300);
+                }
+            }  
+
+            function drawCircle(canvas,xcoordinate,ycoordinate){
+                    var circle = canvas.getContext('2d');
+                    var x = xcoordinate ; 
+                    var y = ycoordinate ;
+                    circle.beginPath();
+                    circle.arc(x,y,150,0,5*Math.PI);
+                    circle.fillStyle = "rgba(256,168,10,0.5)"; 
+                    circle.fill();
+
+            }
+            
+        </script> 
+
+    </head>
+
+    <body onload="draw();">
+
+    <canvas id="myCanvas" width="700" height="800" style="border:1px solid #000000;">
+        Your browser does not support the HTML canvas tag.
+    </canvas>
+
+        
+
+    </body>
+</html>
